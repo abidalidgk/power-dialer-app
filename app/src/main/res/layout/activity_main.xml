@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turns this phone into a remote-controlled line for your WebCarry dashboard."
+            android:textColor="#64748B"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#4F46E5"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Permissions group -->
+        <LinearLayout
+            android:id="@+id/groupPermissions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FEF9C3"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This app needs Phone, SMS, and Camera permissions to place calls, send texts, and scan the pairing QR code."
+                android:textColor="#854D0E"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnGrantPermissions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grant Permissions" />
+        </LinearLayout>
+
+        <!-- Unpaired group -->
+        <LinearLayout
+            android:id="@+id/groupUnpaired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnScan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan QR Code From Dashboard" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#64748B"
+                android:text="Open Power Dialer → Connect Phone on your WebCarry staff dashboard, then scan the QR code shown there." />
+        </LinearLayout>
+
+        <!-- Paired group -->
+        <LinearLayout
+            android:id="@+id/groupPaired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textConnectedTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textConnectedAs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your SIM number (shown on the dashboard; phones can't always report this automatically)"
+                android:textColor="#64748B"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/inputMyNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="phone"
+                    android:hint="+92xxxxxxxxxx" />
+
+                <Button
+                    android:id="@+id/btnSaveNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBatteryOptimization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Allow Background Activity (recommended)"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnUnpair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disconnect This Phone" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
